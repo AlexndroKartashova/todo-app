@@ -1,0 +1,32 @@
+<div class="content-card" *ngIf="parentItem">
+    <div class="toolbar px-24 py-8" fxLayout="row" fxLayoutAlign="start center">
+        <div *ngIf="parentItem.parentItemId" >
+            <button mat-icon-button (click)="return()">
+                <mat-icon class="secondary-text">arrow_back</mat-icon>
+            </button>
+        </div>
+
+        <div >
+            <button mat-raised-button
+                    fxLayoutAlign="space-between center"
+                    class="mat-accent add-todo-button"
+                    (click)="newItem()"
+                    aria-label="ADD ITEM">
+                ADD ITEM 
+            </button>
+        </div>
+    </div>
+    <hr>
+</div>
+
+<div class="todo-list" [@animateStagger]="{value:'50'}">
+    <todo-list-item 
+                    (click)="$event.preventDefault(); $event.stopPropagation(); selectItem(todo)"
+                    class="todo-list-item"
+                    *ngFor="let todo of todos" 
+                    [todo]="todo"
+                    matRipple
+                    [@animate]=" fgfg ? {value:'*',params:{y:'100%'}} : {}">
+                    <!-- [@animate]="{value:'*',params:{y:'100%'}}"  сильно скачут items при обновлении checkbox-->
+   </todo-list-item>
+</div>

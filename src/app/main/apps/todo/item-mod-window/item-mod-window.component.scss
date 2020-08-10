@@ -1,0 +1,25 @@
+@import "src/@fuse/scss/fuse";
+
+todo-main-sidebar {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    height: 100%;
+
+    .content {
+
+        .input-category{
+            margin-left: 25px;
+            border: #039be5 solid 2px;
+            border-radius: 5px;
+            height: 30px;
+            width: 190px;
+        }
+    }
+
+    .add-todo-button {
+        background-color: #039be5 !important;
+        color: white !important;
+        font-weight: 700;
+    }
+}

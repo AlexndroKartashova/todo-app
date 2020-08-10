@@ -1,0 +1,140 @@
+<div id="todo" class="page-layout carded left-sidebar inner-scroll">
+
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- SIDEBAR -->
+    <fuse-sidebar class="sidebar" name="todo-main-sidebar" position="left" lockedOpen="gt-xs" md-disable-close-events="false">
+        <div fxLayout="column" fxLayoutAlign="space-between start"
+            class="header accent p-24 pb-4">
+            <div class="logo" fxFlex fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon class="logo-icon s-32" [@animate]="{value:'*',params:{delay:'50ms',scale:'0.2'}}">
+                    check_box
+                </mat-icon>
+                <span class="logo-text" [@animate]="{value:'*',params:{delay:'100ms',x:'-25px'}}">To-Do</span>
+            </div>
+
+        </div>
+
+        <!-- / SIDEBAR HEADER -->
+        <div class="content" fusePerfectScrollbar [@animate]="{value:'*',params:{y:'50px'}}">
+
+            <div class="p-24">
+                <button mat-raised-button
+                    class="mat-accent add-todo-button w-100-p"
+                    (click)="newCategory()"
+                    aria-label="ADD CATEGORY">
+                    ADD CATEGORY 
+                </button>
+            </div>
+            
+            <div class="nav material2">
+                <div class="nav-subheader">CATEGORY</div>
+                    <div class="nav-item" *ngFor="let category of categories">
+                        <div>
+                            <a  class="nav-link" 
+                                [ngClass]="selectedItem === category.id ? 'link-bg' : ''"
+                                matRipple 
+                                fxLayout="row" fxLayoutAlign="space-between center" fxFlex
+                                (click)="selectCategory(category)">
+                                <span>{{category.name}}</span>
+
+                                <div fxLayout="row" fxLayoutAlign="end center" fxFlex>
+                                    <div 
+                                        class="count-item blue-500-bg" 
+                                        fxLayoutAlign="center center"
+                                        *ngIf="category.itemCount">
+                                        {{category.doneItemCount}}/{{category.itemCount}}
+                                    </div>
+
+                                    <mat-icon (click)=
+                                        "$event.preventDefault(); 
+                                        $event.stopPropagation();" 
+                                        class="btn-action"
+                                        [matMenuTriggerFor]="selectMenu"
+                                        >more_vert
+                                    </mat-icon>
+                                    
+                                    <mat-menu #selectMenu="matMenu">
+                                        <button 
+                                            mat-menu-item 
+                                            (click)="editCategory(category)" 
+                                            class="btn-action">
+                                            <mat-icon>edit</mat-icon>
+                                            edit
+                                        </button>
+                                        <button 
+                                            mat-menu-item 
+                                            (click)="deleteCategory(category)">
+                                            <mat-icon>delete</mat-icon>
+                                            delete
+                                        </button>
+                                    </mat-menu>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </fuse-sidebar>
+    <!-- / SIDEBAR -->
+
+    <!-- CENTER -->
+    <div class="center">
+
+        <!-- CONTENT HEADER -->
+        <div class="header" fxLayout="row" fxLayoutAlign="start center">
+
+            <div class="search-wrapper" fxFlex fxLayout="row" fxLayoutAlign="start center">
+
+                <div class="search" fxLayout="row" fxLayoutAlign="end center">
+                    <button
+                        mat-button [matMenuTriggerFor]="userMenu"
+                        class="profile-btn">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <mat-icon class="profile-icon">account_circle</mat-icon>
+                            <span class="profile-text">Profile</span>
+                            <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                        </div>
+                    </button>
+
+                    <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                        <button 
+                        mat-menu-item 
+                        class="profile-btn"
+                        (click)=selectProfile()>
+                            <mat-icon class="profile-icon">perm_identity</mat-icon>
+                            <span class="profile-text" [routerLink]="'/profile'">My Profile</span>
+                        </button>
+        
+                        <button 
+                            mat-menu-item 
+                            class="logout-btn"
+                            (click)="logOut()">
+                            <mat-icon class="profile-icon">exit_to_app</mat-icon>
+                            <span class="profile-text">Logout</span>
+                        </button>
+        
+                    </mat-menu>
+                </div>
+
+            </div>
+        </div>
+        <!-- / CONTENT HEADER -->
+
+        <div class="content-card" >
+        
+            <div class="content"  >
+                <todo-list fusePerfectScrollbar fxFlex></todo-list>
+               <!--<todo-list fusePerfectScrollbar fxFlex></todo-list>--> 
+            </div>
+
+        </div>
+    
+        
+    </div>
+    <!-- / CENTER -->
+
+</div>

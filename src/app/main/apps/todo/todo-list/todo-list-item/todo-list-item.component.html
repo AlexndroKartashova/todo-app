@@ -1,0 +1,30 @@
+
+<div fxLayout="row" fxLayoutAlign="start center">
+
+    <mat-checkbox [(ngModel)]="todo.isDone" (ngModelChange)="onSelectedChange(todo)" 
+            (click)=" $event.stopPropagation();"
+            class="mr-16" fxFlex="0 1 auto">
+    </mat-checkbox>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex>
+
+        <div class="info" fxFlex fxFlexLayout="column" fxLayoutAlign="space-between center">
+            <div class="todo_name">
+                {{todo.name}}
+            </div>
+            
+            <div fxLayout="row" fxLayoutAlign="end center" fxFlex>
+                <div class="count-item blue-500-bg" fxLayoutAlign="center center" *ngIf="todo.itemCount">{{todo.doneItemCount}}/{{todo.itemCount}}</div>
+            
+                <button mat-icon-button (click)="$event.preventDefault(); $event.stopPropagation(); editItem(todo)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button (click)="$event.preventDefault(); $event.stopPropagation(); deleteItem(todo)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
