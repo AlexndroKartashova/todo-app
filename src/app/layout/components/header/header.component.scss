@@ -1,0 +1,159 @@
+@import "src/@fuse/scss/fuse";
+
+.header {
+
+    .profile {
+        width: 100%;
+        height: 200px;
+        background: #039be5;
+        background-size: cover;
+        line-height: 56px;
+        padding: 0 18px;
+    }
+}
+
+.content-card {
+
+    .toolbar {
+        height: 56px;
+
+        .toolbar-separator {
+            height: 32px;
+            width: 1px;
+            margin: 0 12px;
+        }
+    }
+
+    @include media-breakpoint('lt-xl') {
+
+        todo-list {
+            border-right: 0;
+        }
+
+        todo-list,
+        todo-details {
+            flex: 1 0 100%;
+        }
+
+        todo-details {
+            display: none !important;
+        }
+
+        &.current-todo-selected {
+
+            .toolbar {
+                margin-top: 10px;
+                padding-left: 16px !important;
+
+                .todo-selection {
+                    display: none !important;
+                }
+            }
+
+            .content {
+
+                todo-list {
+                    display: none !important;
+                }
+
+                todo-details {
+                    display: flex !important;
+                }
+            }
+
+        }
+    }
+}
+
+
+.event-form-dialog {
+
+    @include media-breakpoint('xs') {
+        width: 100%;
+    }
+
+    @include media-breakpoint('gt-xs') {
+        width: 480px;
+    }
+
+    .mat-dialog-container {
+        padding: 0 !important;
+    }
+
+    .dialog-content-wrapper {
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .primary-color-input,
+    .secondary-color-input {
+        padding: 6px 8px;
+    }
+}
+
+.mat-button {
+    border-radius: 20px !important;
+}
+
+.profile-icon,
+.profile-text,
+.logout-text, 
+.exit-btn {
+    color: black !important;
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 20x;
+}
+.logout-btn,
+.profile-btn {
+    align-items: center;
+    background-color: white !important;
+}
+
+.profile-btn {
+    min-width: 64px;
+    height: 64px;
+
+    @include media-breakpoint('xs') {
+        height: 56px;
+    }
+}
+
+.material2 {
+
+    .nav-item {
+
+        .nav-link {
+            border-radius: 20px;
+            padding: 0 12px;
+        }
+    }
+}
+
+.link-bg {
+    background-color: #039be5 !important;
+    color: white !important;
+    font-weight: 700;
+}
+
+.action {
+
+    .btn-action {
+      margin-right: 5px;  
+    }  
+}
+
+.count-item {
+    width: 40px;
+    height: 25px;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-weight: 500;
+    margin-right: 10px;
+    font-size: 22px;
+}
+
+.mat-menu-panel {
+    min-width: 85px !important;
+}

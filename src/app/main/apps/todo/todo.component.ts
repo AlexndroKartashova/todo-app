@@ -42,7 +42,6 @@ export class TodoComponent implements OnInit
 
     selectProfile() {
         this.router.navigate(['/profile']); 
-        console.log('click');
     }
 
     getCategories() {

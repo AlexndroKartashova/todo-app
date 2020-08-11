@@ -1,0 +1,4 @@
+@mixin toolbar-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+}

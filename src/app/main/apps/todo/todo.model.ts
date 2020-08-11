@@ -19,7 +19,6 @@ export class Todo
             this.name = todo.name;
             this.isDone = false;
             this.isDeleted = false;
-            
         }
     }
     /**
@@ -36,6 +35,29 @@ export class Todo
     toggleDeleted(): void
     {
         this.isDeleted = !this.isDeleted;
+    }
+}
+
+export class User {
+
+    userEmail: string;
+    firstName: string;
+    lastName: string;
+    birthday: Date;
+
+    /**
+     * Constructor
+     *
+     * @param user
+     */
+    constructor(user)
+    {
+        {
+            this.userEmail = user.UserEmail;
+            this.firstName = user.firstName;
+            this.lastName = user.lastName;
+            this.birthday = user.birthday;
+        }
     }
 }
 

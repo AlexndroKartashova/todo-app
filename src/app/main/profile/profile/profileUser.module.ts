@@ -12,6 +12,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { ProfileComponent } from './profile.component';
 import { ProfileAboutComponent } from './tabs/about/about.component';
 import { RouterModule } from '@angular/router';
+import { HeaderModule } from 'app/layout/components/header/header.module';
 
 const routes = [
   {
@@ -39,6 +40,8 @@ const routes = [
     MatDividerModule,
     MatIconModule,
     MatTabsModule,
+    HeaderModule,
+    RouterModule    
   ]
 })
 export class ProfileUserModule { }

@@ -3,11 +3,11 @@
 #profile {
 
     .header {
-        height: 320px;
-        min-height: 320px;
-        max-height: 320px;
-        background: url('/assets/images/backgrounds/dark-material-bg.jpg') no-repeat 0 45%;
+        height: 200px;
+        min-height: 200px;
+        background: #039be5;
         background-size: cover;
+        padding: 32px;
 
         .profile-image {
             margin-right: 24px;

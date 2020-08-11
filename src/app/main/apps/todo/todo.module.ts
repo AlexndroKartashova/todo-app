@@ -23,6 +23,7 @@ import { ItemModWindowComponent } from './item-mod-window/item-mod-window.compon
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind/confirm-mod-wind.component';
 import { ProfileModule } from 'app/main/profile/profile.module';
+import { HeaderModule } from 'app/layout/components/header/header.module';
 
 const routes: Routes = [
     {
@@ -59,7 +60,8 @@ const routes: Routes = [
 
         ReactiveFormsModule,
         MatToolbarModule,
-        ProfileModule
+        ProfileModule,
+        HeaderModule
 
     ],
     providers   : [

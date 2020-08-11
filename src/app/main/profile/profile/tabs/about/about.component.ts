@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { fuseAnimations } from '@fuse/animations';
+import { UserService } from 'app/core/user/user.service';
+import { User } from 'app/main/apps/todo/todo.model';
 // import { ProfileService } from 'app/main/pages/profile/profile.service';
 
 @Component({
@@ -12,12 +12,10 @@ import { fuseAnimations } from '@fuse/animations';
     encapsulation: ViewEncapsulation.None,
     animations   : fuseAnimations
 })
-export class ProfileAboutComponent implements OnInit, OnDestroy
+export class ProfileAboutComponent implements OnInit
 {
     about: any;
-
-    // Private
-    private _unsubscribeAll: Subject<any>;
+    user: User
 
     /**
      * Constructor
@@ -25,36 +23,18 @@ export class ProfileAboutComponent implements OnInit, OnDestroy
      * @param {ProfileService} _profileService
      */
     constructor(
-        // private _profileService: ProfileService
-    )
-    {
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
-
-    // -----------------------------------------------------------------------------------------------------
-    // @ Lifecycle hooks
-    // -----------------------------------------------------------------------------------------------------
-
-    /**
-     * On init
-     */
-    ngOnInit(): void
-    {
-        // this._profileService.aboutOnChanged
-        //     .pipe(takeUntil(this._unsubscribeAll))
-        //     .subscribe(about => {
-        //         this.about = about;
-        //     });
-    }
-
-    /**
-     * On destroy
-     */
-    ngOnDestroy(): void
-    {
-        // Unsubscribe from all subscriptions
-        this._unsubscribeAll.next();
-        this._unsubscribeAll.complete();
-    }
+        private userService: UserService
+      ) { }
+    
+      ngOnInit() {
+        this.getUser();
+      }
+    
+      getUser() {
+        this.userService.getUserById()
+            .subscribe((user) => {
+                this.user = user;
+                console.log('user', user)
+            }, err => {})
+      }
 }

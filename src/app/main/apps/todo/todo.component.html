@@ -82,48 +82,8 @@
 
     <!-- CENTER -->
     <div class="center">
-
-        <!-- CONTENT HEADER -->
-        <div class="header" fxLayout="row" fxLayoutAlign="start center">
-
-            <!-- <div class="search-wrapper" fxFlex fxLayout="row" fxLayoutAlign="start center"> -->
-
-                <div class="search" fxLayout="row" fxLayoutAlign="end center">
-                    <button
-                        mat-button [matMenuTriggerFor]="userMenu"
-                        class="profile-btn">
-                        <div fxLayout="row" fxLayoutAlign="start center">
-                            <mat-icon class="profile-icon">account_circle</mat-icon>
-                            <span class="profile-text">Profile</span>
-                            <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
-                        </div>
-                    </button>
-
-                    <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
-
-                        <button 
-                        mat-menu-item 
-                        class="profile-btn"
-                        (click)=selectProfile()>
-                            <mat-icon class="profile-icon">perm_identity</mat-icon>
-                            <span class="profile-text" [routerLink]="'/profile'">My Profile</span>
-                        </button>
         
-                        <button 
-                            mat-menu-item 
-                            class="logout-btn"
-                            (click)="logOut()">
-                            <mat-icon class="profile-icon">exit_to_app</mat-icon>
-                            <span class="profile-text">Logout</span>
-                        </button>
-        
-                    </mat-menu>
-                </div>
-
-            <!-- </div> -->
-        </div>
-        <!-- / CONTENT HEADER -->
-
+        <div class="header" fxLayout="row" fxLayoutAlign="start center"></div>
         <div class="content-card" >
         
             <div class="content"  >

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
+import { UserService } from 'app/core/user/user.service';
+import { User } from 'app/main/apps/todo/todo.model';
 
 @Component({
   selector: 'app-profile',
@@ -10,12 +12,12 @@ import { fuseAnimations } from '@fuse/animations';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit() {
-    console.log('true');
-  }
 
-  
-  
+  }
 }

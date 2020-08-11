@@ -1,0 +1,52 @@
+<!-- <div class="center"> -->
+
+  <!-- CONTENT HEADER -->
+  <div >
+
+      <!-- <div class="search-wrapper" fxFlex fxLayout="row" fxLayoutAlign="start center"> -->
+
+          <div>
+              <button
+                  mat-button [matMenuTriggerFor]="userMenu"
+                  class="profile-btn">
+                  <div fxLayout="row" fxLayoutAlign="end center">
+                      <mat-icon class="profile-icon">account_circle</mat-icon>
+                      <span class="profile-text">Profile</span>
+                      <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                  </div>
+              </button>
+
+              <mat-menu #userMenu="matMenu" [overlapTrigger]="false">
+
+                  <button 
+                  mat-menu-item [routerLink]="'/profile'" 
+                  *ngIf="!toggle"
+                  class="profile-btn"
+                  (click)="selectProfile()">
+                      <mat-icon class="profile-icon">perm_identity</mat-icon>
+                      <span class="profile-text">My Profile</span>
+                  </button>
+
+                  <button 
+                  mat-menu-item [routerLink]="'/todo/categories'"
+                  *ngIf="toggle"
+                  class="profile-btn"                  >
+                      <mat-icon class="profile-icon">done</mat-icon>
+                      <span class="profile-text">Todo</span>
+                  </button>
+  
+                  <button 
+                      mat-menu-item 
+                      class="logout-btn"
+                      (click)="toggleBtn()">
+                      <mat-icon class="profile-icon">exit_to_app</mat-icon>
+                      <span class="profile-text">Logout</span>
+                  </button>
+  
+              </mat-menu>
+          </div>
+
+      <!-- </div> -->
+  </div>
+  <!-- / CONTENT HEADER -->
+<!-- </div>   -->

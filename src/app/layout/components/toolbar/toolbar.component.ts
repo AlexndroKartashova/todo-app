@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
-import { navigation } from 'app/navigation/navigation';
+import { AuthService } from 'app/core/auth/auth.service';
 
 @Component({
     selector     : 'toolbar',
@@ -39,56 +39,11 @@ export class ToolbarComponent implements OnInit, OnDestroy
     constructor(
         private _fuseConfigService: FuseConfigService,
         private _fuseSidebarService: FuseSidebarService,
-        private _translateService: TranslateService
+        private _translateService: TranslateService,
+
+        private authService: AuthService
     )
-    {
-        // Set the defaults
-        this.userStatusOptions = [
-            {
-                title: 'Online',
-                icon : 'icon-checkbox-marked-circle',
-                color: '#4CAF50'
-            },
-            {
-                title: 'Away',
-                icon : 'icon-clock',
-                color: '#FFC107'
-            },
-            {
-                title: 'Do not Disturb',
-                icon : 'icon-minus-circle',
-                color: '#F44336'
-            },
-            {
-                title: 'Invisible',
-                icon : 'icon-checkbox-blank-circle-outline',
-                color: '#BDBDBD'
-            },
-            {
-                title: 'Offline',
-                icon : 'icon-checkbox-blank-circle-outline',
-                color: '#616161'
-            }
-        ];
-
-        this.languages = [
-            {
-                id   : 'en',
-                title: 'English',
-                flag : 'us'
-            },
-            {
-                id   : 'tr',
-                title: 'Turkish',
-                flag : 'tr'
-            }
-        ];
-
-        this.navigation = navigation;
-
-        // Set the private defaults
-        this._unsubscribeAll = new Subject();
-    }
+    {}
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks
@@ -159,5 +114,9 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
         // Use the selected language for translations
         this._translateService.use(lang.id);
+    }
+
+    logOut() {
+    this.authService.logOut();
     }
 }
