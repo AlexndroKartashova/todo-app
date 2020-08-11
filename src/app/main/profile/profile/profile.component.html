@@ -1,7 +1,13 @@
 <div id="profile" class="page-layout simple tabbed">
 
-  <!-- HEADER -->
-  <div class="header p-24" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
+    <!-- TOP BACKGROUND -->
+    <div class="top-bg accent"></div>
+    <!-- / TOP BACKGROUND -->
+
+    <!-- SIDEBAR -->
+    <fuse-sidebar class="sidebar" name="todo-main-sidebar" position="left" lockedOpen="gt-xs" md-disable-close-events="false"></fuse-sidebar>
+
+    <div class="header p-24" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
        fxLayoutAlign.gt-sm="space-between end">
 
       <div class="user-info" fxLayout="column" fxLayoutAlign="center center" fxLayout.gt-sm="row"
@@ -18,14 +24,16 @@
           <button mat-raised-button color="primary" aria-label="Send Message">Send Message</button>
       </div>
 
-  </div>
-  <!-- / HEADER -->
+    </div>
+    <div class="content">
+        <input class="input">
+        <mat-tab-group dynamicHeight="true">
 
-  <!-- CONTENT -->
-  <div class="content">
+            <mat-tab label="About">
+                <profile-about></profile-about>
+            </mat-tab>
 
-     
-  </div>
-  <!-- / CONTENT -->
+        </mat-tab-group>
+    </div>
 
 </div>

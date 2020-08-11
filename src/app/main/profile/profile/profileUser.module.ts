@@ -10,12 +10,23 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { ProfileComponent } from './profile.component';
+import { ProfileAboutComponent } from './tabs/about/about.component';
+import { RouterModule } from '@angular/router';
+
+const routes = [
+  {
+      path     : '',
+      component: ProfileComponent
+  }
+];
 
 @NgModule({
   declarations: [
     ProfileComponent,
+    ProfileAboutComponent,
   ],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
     NgxDnDModule,
     

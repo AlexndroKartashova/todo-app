@@ -11,7 +11,6 @@ import { LoginModule } from './login/login.module';
 
 @NgModule({
     imports: [
-        // Authentication
         MatCardModule,
         MatInputModule,
         FormsModule,
@@ -19,7 +18,7 @@ import { LoginModule } from './login/login.module';
         RouterModule,
         MatButtonModule,
         LoginModule,
-    RegisterModule,
+        RegisterModule,
     ]
 })
 export class AuthModule

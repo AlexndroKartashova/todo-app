@@ -119,6 +119,9 @@ todo {
     }
 }
 
+.mat-button {
+    border-radius: 20px !important;
+}
 
 .profile-icon,
 .profile-text,
@@ -137,16 +140,8 @@ todo {
 
 .logout-btn,
 .profile-btn {
-    overflow: hidden;
-    height: 56px;
-    line-height: 56px;
-    padding: 0 18px;
-    display: flex;
     align-items: center;
     background-color: white !important;
-    border-radius: 28px;
-    border: none;
-    outline: none;
 }
 
 .profile-btn {
