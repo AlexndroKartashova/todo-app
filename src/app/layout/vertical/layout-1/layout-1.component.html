@@ -7,6 +7,12 @@
 
     <div id="container-1" class="container">
 
+        <!-- NAVBAR: Left -->
+        <ng-container *ngIf="fuseConfig.layout.navbar.position === 'left'">
+            <ng-container *ngTemplateOutlet="leftNavbar"></ng-container>
+        </ng-container>
+        <!-- / NAVBAR: Left -->
+
         <div id="container-2" class="container">
 
             <!-- TOOLBAR: Below fixed -->
@@ -65,6 +71,17 @@
     </toolbar>
 </ng-template>
 <!-- / TOOLBAR -->
+
+<!-- LEFT NAVBAR -->
+<ng-template #leftNavbar>
+    <fuse-sidebar name="navbar" class="navbar-fuse-sidebar"
+                  [folded]="fuseConfig.layout.navbar.folded"
+                  lockedOpen="gt-md"
+                  *ngIf="!fuseConfig.layout.navbar.hidden">
+        <navbar [variant]="fuseConfig.layout.navbar.variant" class="left-navbar"></navbar>
+    </fuse-sidebar>
+</ng-template>
+<!-- / LEFT NAVBAR -->
 
 <!-- FOOTER -->
 <ng-template #footer>
