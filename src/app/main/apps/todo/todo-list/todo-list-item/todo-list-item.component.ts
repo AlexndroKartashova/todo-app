@@ -3,8 +3,8 @@ import { Todo } from 'app/main/apps/todo/todo.model';
 import { CategoryValueService } from '../../category-value.service';
 import { ItemService } from 'app/core/items/item.service';
 import { MatDialog,} from '@angular/material/dialog';
-import { ItemModWindowComponent } from '../../item-mod-window/item-mod-window.component';
-import { ConfirmModWindComponent } from '../../confirm-mod-wind/confirm-mod-wind/confirm-mod-wind.component';
+import { ModWindowComponent } from '../../mod-window/mod-window.component';
+import { ConfirmModWindComponent } from '../../confirm-mod-wind/confirm-mod-wind.component';
 
 @Component({
     selector     : 'todo-list-item',
@@ -62,7 +62,7 @@ export class TodoListItemComponent implements OnInit
     editItem(todo) {
         if (todo.name != null) {
             
-            var modalWindow = this.dalog.open(ItemModWindowComponent,{
+            var modalWindow = this.dalog.open(ModWindowComponent,{
                 panelClass: 'event-form-dialog',
             });
             modalWindow.componentInstance.title = 'Edit Item';

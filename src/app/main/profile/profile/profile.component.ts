@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
 import { UserService } from 'app/core/user/user.service';
 import { User } from 'app/main/apps/todo/todo.model';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -14,10 +15,12 @@ export class ProfileComponent implements OnInit {
 
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
   ) { }
 
   ngOnInit() {
 
   }
+
+  
 }

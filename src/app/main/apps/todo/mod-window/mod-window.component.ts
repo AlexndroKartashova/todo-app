@@ -3,11 +3,11 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-item-mod-window',
-  templateUrl: './item-mod-window.component.html',
-  styleUrls: ['./item-mod-window.component.scss']
+  selector: 'app-mod-window',
+  templateUrl: './mod-window.component.html',
+  styleUrls: ['./mod-window.component.scss']
 })
-export class ItemModWindowComponent implements OnInit {
+export class ModWindowComponent implements OnInit {
 
   ngOnInit() {
     this.itemControl = new FormGroup({
@@ -29,7 +29,7 @@ export class ItemModWindowComponent implements OnInit {
      */
     constructor(
       @Inject(MAT_DIALOG_DATA) private _data: any,
-      public dialogRef: MatDialogRef<ItemModWindowComponent>, 
+      public dialogRef: MatDialogRef<ModWindowComponent>, 
   )  { }
 
   matDialogClose(): void {

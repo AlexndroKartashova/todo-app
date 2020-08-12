@@ -5,8 +5,8 @@ import { fuseAnimations } from '@fuse/animations';
 import { Todo } from 'app/main/apps/todo/todo.model';
 import { AuthService } from 'app/core/auth/auth.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ItemModWindowComponent } from './item-mod-window/item-mod-window.component';
-import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind/confirm-mod-wind.component';
+import { ModWindowComponent } from './mod-window/mod-window.component';
+import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind.component';
 import { ItemService } from 'app/core/items/item.service';
 import { CategoryValueService } from './category-value.service';
 import { Router } from '@angular/router';
@@ -54,7 +54,7 @@ export class TodoComponent implements OnInit
     }
     
     newCategory() {  
-        var modalWindow = this.dalog.open(ItemModWindowComponent,{
+        var modalWindow = this.dalog.open(ModWindowComponent,{
             panelClass: 'event-form-dialog',
         });
             
@@ -92,7 +92,7 @@ export class TodoComponent implements OnInit
 
     editCategory(category) {
         if (category.name != null) {
-            var modalWindow = this.dalog.open(ItemModWindowComponent,{
+            var modalWindow = this.dalog.open(ModWindowComponent,{
                 panelClass: 'event-form-dialog',
                 });
 

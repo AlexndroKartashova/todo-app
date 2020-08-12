@@ -109,30 +109,6 @@ todo {
     border-radius: 20px !important;
 }
 
-.profile-icon,
-.profile-text,
-.logout-text, 
-.exit-btn {
-    color: black !important;
-    font-weight: 500;
-    margin-right: 10px;
-    font-size: 20x;
-}
-.logout-btn,
-.profile-btn {
-    align-items: center;
-    background-color: white !important;
-}
-
-.profile-btn {
-    min-width: 64px;
-    height: 64px;
-
-    @include media-breakpoint('xs') {
-        height: 56px;
-    }
-}
-
 .material2 {
 
     .nav-item {

@@ -1,0 +1,43 @@
+<div id="about" class="p-24" fxLayout="row wrap">
+
+    <div class="about-content" fxLayout="column" fxFlex="100" fxFlex.gt-sm="50" fxFlex.gt-md="100">
+
+        <div class="profile-box info-box" fxLayout="column">
+
+            <div class="content">
+                <div class="info-line" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <div class="title">First Name</div>
+                        <div class="info">{{user.firstName}}</div>
+                    </div>    
+                    <button mat-icon-button (click)="$event.preventDefault(); $event.stopPropagation(); editItem(item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+
+                <div class="info-line" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <div class="title">Last Name</div>
+                        <div class="info">{{user.lastName}}</div>
+                    </div>    
+                    <button mat-icon-button (click)="$event.preventDefault(); $event.stopPropagation(); editItem(item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+
+                <div class="info-line" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div>
+                        <div class="title">Birthday</div>
+                        <div class="info">{{user.birthday}}</div>
+                    </div>    
+                    <button mat-icon-button (click)="$event.preventDefault(); $event.stopPropagation(); editItem(item)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

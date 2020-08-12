@@ -3,8 +3,8 @@
 #profile {
 
     .header {
-        height: 200px;
-        min-height: 200px;
+        // height: 200px;
+        // min-height: 200px;
         background: #039be5;
         background-size: cover;
         padding: 32px;
@@ -47,4 +47,46 @@
             }
         }
     }
+
+    @include media-breakpoint('lt-xl') {
+
+        profile-list {
+            border-right: 0;
+        }
+
+        profile-list{
+            flex: 1 0 100%;
+        }
+
+        profile-details {
+            display: none !important;
+        }
+
+        &.current-todo-selected {
+
+            .toolbar {
+                padding-left: 16px !important;
+
+                .todo-selection {
+                    display: none !important;
+                }
+            }
+
+            .content {
+
+                profile-list {
+                    display: none !important;
+                }
+            }
+        }
+    }
 }
+
+.mat-icon {
+    margin-right: 10px;
+}
+
+
+// .nav .nav-item .nav-link {
+//     overflow: ;
+// }

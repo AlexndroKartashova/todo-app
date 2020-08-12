@@ -5,7 +5,7 @@ import { Todo } from 'app/main/apps/todo/todo.model';
 import { ItemService } from 'app/core/items/item.service';
 import { CategoryValueService } from '../category-value.service';
 import { MatDialog } from '@angular/material/dialog';
-import { ItemModWindowComponent } from '../item-mod-window/item-mod-window.component';
+import { ModWindowComponent } from '../mod-window/mod-window.component';
 
 @Component({
     selector     : 'todo-list',
@@ -41,7 +41,7 @@ export class TodoListComponent implements OnInit
     }
 
     newItem() {
-        var modalWindow = this.dalog.open(ItemModWindowComponent,{
+        var modalWindow = this.dalog.open(ModWindowComponent,{
             panelClass: 'event-form-dialog',
         });
             

@@ -19,9 +19,9 @@ import { TodoListItemComponent } from 'app/main/apps/todo/todo-list/todo-list-it
 import { TodoListComponent } from 'app/main/apps/todo/todo-list/todo-list.component';
 import { ItemService } from 'app/core/items/item.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ItemModWindowComponent } from './item-mod-window/item-mod-window.component';
+import { ModWindowComponent } from './mod-window/mod-window.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind/confirm-mod-wind.component';
+import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind.component';
 import { ProfileModule } from 'app/main/profile/profile.module';
 import { HeaderModule } from 'app/layout/components/header/header.module';
 
@@ -37,7 +37,7 @@ const routes: Routes = [
         TodoComponent,
         TodoListItemComponent,
         TodoListComponent,
-        ItemModWindowComponent,
+        ModWindowComponent,
         ConfirmModWindComponent,
     ],
     imports     : [
@@ -68,8 +68,9 @@ const routes: Routes = [
         ItemService
     ],
     entryComponents: [
-        ItemModWindowComponent,
-        ConfirmModWindComponent]
+        ModWindowComponent,
+        ConfirmModWindComponent
+    ]
 })
 export class TodoModule
 {

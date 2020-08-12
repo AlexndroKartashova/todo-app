@@ -1,0 +1,40 @@
+<div class="dialog-content-wrapper" cdkFocusInitial >
+
+  <mat-toolbar class="mat-accent m-0">
+    <mat-toolbar-row fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+        <span class="title dialog-title">{{title}}</span>
+        <button mat-icon-button (click)="matDialogClose()" aria-label="Close dialog">
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+  <div mat-dialog-content class="p-16 pb-0 m-0" fusePerfectScrollbar>
+
+      <form name="eventForm" class="event-form w-100-p" fxLayout="column" fxFlex [formGroup]="itemControl">
+
+          <mat-form-field appearance="outline" class="w-100-p">
+              <mat-label>Name</mat-label>
+              <input matInput
+                    formControlName="item"
+                    name="title">
+          </mat-form-field>
+
+      </form>
+
+  </div>
+
+    <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
+   
+        <button 
+                mat-raised-button
+                class="mat-accent add-todo-button w-100-p"
+                mat-button 
+                (click)="dialogRef.close(itemControl)"
+                aria-label="ADD"
+                [disabled]="itemControl.invalid">
+            Save
+        </button>
+    
+    </div>
+</div>
