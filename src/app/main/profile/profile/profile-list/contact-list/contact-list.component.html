@@ -1,0 +1,52 @@
+<mat-table #table [dataSource]="dataSource"
+           [@animateStagger]="{value:'50'}">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+        <mat-cell *matCellDef="let contact">
+            <p class="text-truncate font-weight-600">{{contact.name}}</p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-sm>Email</mat-header-cell>
+        <mat-cell *matCellDef="let contact" fxHide fxShow.gt-sm>
+            <p class="email text-truncate">
+                {{contact.email}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Phone Column -->
+    <ng-container matColumnDef="phone">
+        <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-md>Phone</mat-header-cell>
+        <mat-cell *matCellDef="let contact" fxHide fxShow.gt-md>
+            <p class="phone text-truncate">
+                {{contact.phoneNumber}}
+            </p>
+        </mat-cell>
+    </ng-container>
+
+    <!-- Buttons Column -->
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef>
+            <mat-icon class="secondary-text cursor" (click)="addContact()">add_circle_outline</mat-icon> 
+        </mat-header-cell>
+        <mat-cell *matCellDef="let contact; let i = index">
+                <div fxFlex="row" fxLayoutAlign="start center">
+                    <mat-icon class="secondary-text" (click)="editContact(contact)" >edit</mat-icon>
+                    <mat-icon class="secondary-text" (click)="deleteContact(contact)" >delete</mat-icon>
+                </div>
+        </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let contact; columns: displayedColumns;"
+            class="contact"
+            matRipple
+            [@animate]="{value:'*',params:{y:'100%'}}">
+    </mat-row>
+</mat-table>
+
+

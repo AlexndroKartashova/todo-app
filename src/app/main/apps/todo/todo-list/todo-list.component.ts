@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
 import { ItemService } from 'app/core/items/item.service';
 import { CategoryValueService } from '../category-value.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModWindowComponent } from '../mod-window/mod-window.component';
+import { Todo } from 'app/core/interface/models.model';
 
 @Component({
     selector     : 'todo-list',

@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { fuseAnimations } from '@fuse/animations';
-import { UserService } from 'app/core/user/user.service';
-import { User } from 'app/main/apps/todo/todo.model';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -13,14 +10,22 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProfileComponent implements OnInit {
 
+  selectedItem: number;
 
   constructor(
-    private userService: UserService,
+    
   ) { }
 
   ngOnInit() {
 
   }
 
+  selectGeneralInformation() {
+    this.selectedItem = 1;
+  }
+
+  selectContactsInformation() {
+    this.selectedItem = 2;
+  }
   
 }

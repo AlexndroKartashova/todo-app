@@ -2,7 +2,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { fuseAnimations } from '@fuse/animations';
 
-import { Todo } from 'app/main/apps/todo/todo.model';
 import { AuthService } from 'app/core/auth/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModWindowComponent } from './mod-window/mod-window.component';
@@ -10,6 +9,7 @@ import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind.com
 import { ItemService } from 'app/core/items/item.service';
 import { CategoryValueService } from './category-value.service';
 import { Router } from '@angular/router';
+import { Todo } from 'app/core/interface/models.model';
 
 @Component({
     selector     : 'todo',

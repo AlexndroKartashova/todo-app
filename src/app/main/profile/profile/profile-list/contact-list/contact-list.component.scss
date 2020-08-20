@@ -1,0 +1,82 @@
+@import "src/@fuse/scss/fuse";
+
+contacts-contact-list {
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%;
+
+    .mat-table {
+        width: 100%;
+        background: transparent;
+        box-shadow: none;
+
+        .mat-column-buttons {
+            flex: 0 1 80px;
+        }
+
+        .mat-row {
+            position: relative;
+            cursor: pointer;
+            // padding: 8px;
+
+            .mat-cell {
+                min-width: 0;
+                text-align: center;
+
+
+                &.mat-column-detail-button {
+                    flex: 0 1 auto;
+                    padding: 0 24px 0 0;
+
+                    @include media-breakpoint('gt-md') {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#add-contact-button {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    padding: 0;
+    z-index: 99;
+
+    @include media-breakpoint('xs') {
+        position: sticky;
+        top: calc(100vh - 120px);
+        bottom: auto;
+    }
+}
+
+.event-form-dialog {
+
+    @include media-breakpoint('xs') {
+        width: 100%;
+    }
+
+    @include media-breakpoint('gt-xs') {
+        width: 480px;
+    }
+
+    .mat-dialog-container {
+        padding: 0 !important;
+    }
+
+    .dialog-content-wrapper {
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .primary-color-input,
+    .secondary-color-input {
+        padding: 6px 8px;
+    }
+}
+
+.cursor {
+    cursor: pointer;
+}

@@ -11,28 +11,14 @@
 
   <div mat-dialog-content class="p-16 pb-0 m-0" fusePerfectScrollbar>
 
-      <form name="eventForm" class="event-form w-100-p" fxLayout="column" fxFlex [formGroup]="dataProfileControl">
+      <form name="eventForm" class="event-form w-100-p" fxLayout="column" fxFlex [formGroup]="dataContactControl">
 
             <mat-form-field appearance="outline">
-                <mat-label>First Name</mat-label>
+                <mat-label>Name</mat-label>
                 <input matInput
-                    formControlName="firstName"
+                    formControlName="name"
                     name="title">
             </mat-form-field>
-
-            <mat-form-field appearance="outline">
-                <mat-label>Last Name</mat-label>
-                <input matInput
-                    formControlName="lastName"
-                    name="title">
-            </mat-form-field>  
-
-            <!-- <mat-form-field appearance="outline" class="w-100-p">
-                <mat-label>Phone Number</mat-label>
-                <input matInput
-                    formControlName="phoneNumber"
-                    name="title">
-            </mat-form-field> -->
 
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
@@ -41,7 +27,7 @@
                     name="title">
             </mat-form-field>
 
-            <form class="form-phone" [formGroup]="dataProfileControl"> 
+            <form class="form-phone" [formGroup]="dataContactControl"> 
                 <label>Phone Number</label>
                 <br>
                 <ngx-intl-tel-input 
@@ -62,17 +48,6 @@
                     formControlName="phoneNumber"
                 ></ngx-intl-tel-input>
             </form>
-
-            <mat-form-field appearance="outline" class="w-100-p">
-                <mat-label>Birthday</mat-label>
-                <input matInput
-                    [matDatepicker]="picker"
-                    formControlName="birthday"
-                    name="title">
-                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-
       </form>
 
   </div>
@@ -83,9 +58,9 @@
                 mat-raised-button
                 class="mat-accent add-todo-button w-100-p"
                 mat-button 
-                (click)="dialogRef.close(dataProfileControl)"
+                (click)="dialogRef.close(dataContactControl)"
                 aria-label="ADD"
-                [disabled]="dataProfileControl.invalid">
+                [disabled]="dataContactControl.invalid">
             Save
         </button>
     

@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit} from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -28,7 +28,6 @@ export class ModWindowComponent implements OnInit {
      * @param {MatDialogRef<CalendarEventFormDialogComponent>} matDialogRef
      */
     constructor(
-      @Inject(MAT_DIALOG_DATA) private _data: any,
       public dialogRef: MatDialogRef<ModWindowComponent>, 
   )  { }
 

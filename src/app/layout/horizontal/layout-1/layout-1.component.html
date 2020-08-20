@@ -83,7 +83,7 @@
 
 <!-- TOOLBAR -->
 <ng-template #toolbar>
-    <toolbar *ngIf="!fuseConfig.layout.toolbar.hidden"
+    <toolbar *ngIf="!fuseConfig.layout.toolbar.position === 'above'"
              [ngClass]="fuseConfig.layout.toolbar.customBackgroundColor === true ? fuseConfig.layout.toolbar.position + ' ' + fuseConfig.layout.toolbar.background : fuseConfig.layout.toolbar.position">
     </toolbar>
 </ng-template>

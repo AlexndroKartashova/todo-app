@@ -55,13 +55,13 @@ export class ToolbarComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Subscribe to the config changes
-        this._fuseConfigService.config
-            .pipe(takeUntil(this._unsubscribeAll))
-            .subscribe((settings) => {
-                this.horizontalNavbar = settings.layout.navbar.position === 'top';
-                this.rightNavbar = settings.layout.navbar.position === 'right';
-                this.hiddenNavbar = settings.layout.navbar.hidden === true;
-            });
+        // this._fuseConfigService.config
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe((settings) => {
+        //         this.horizontalNavbar = settings.layout.navbar.position === 'top';
+        //         this.rightNavbar = settings.layout.navbar.position === 'right';
+        //         this.hiddenNavbar = settings.layout.navbar.hidden === true;
+        //     });
 
         // Set the selected language from default languages
         this.selectedLanguage = _.find(this.languages, {id: this._translateService.currentLang});

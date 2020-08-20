@@ -40,10 +40,11 @@ export class Todo
 
 export class User {
 
-    userEmail: string;
+    email: string;
     firstName: string;
     lastName: string;
     birthday: Date;
+    phoneNumber: Date;
 
     /**
      * Constructor
@@ -53,12 +54,34 @@ export class User {
     constructor(user)
     {
         {
-            this.userEmail = user.UserEmail;
+            this.email = user.email;
             this.firstName = user.firstName;
             this.lastName = user.lastName;
             this.birthday = user.birthday;
+            this.phoneNumber = user.phoneNumber;
         }
     }
 }
 
+export class Contact {
 
+    email?: string;
+    name: string;
+    phoneNumber?: Date;
+    // userId: string;
+
+    /**s
+     * Constructor
+     *
+     * @param contact
+     */
+    constructor(contact)
+    {
+        {
+            this.email = contact.email;
+            this.name = contact.name;
+            this.phoneNumber = contact.phoneNumber;
+            // this.userId = contact.userId;
+        }
+    }
+}

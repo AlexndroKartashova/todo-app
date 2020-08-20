@@ -2,9 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 import { fuseAnimations } from '@fuse/animations';
 import { UserService } from 'app/core/user/user.service';
-import { User } from 'app/main/apps/todo/todo.model';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalWindowComponent } from '../../modal-window/modal-window.component';
+import { User } from 'app/core/interface/models.model';
 
 @Component({
     selector     : 'profile-about',
@@ -16,7 +16,7 @@ import { ModalWindowComponent } from '../../modal-window/modal-window.component'
 export class ProfileAboutComponent implements OnInit
 {
   about: any;
-  user: User
+  user: User;
 
   /**
    * Constructor
@@ -25,7 +25,7 @@ export class ProfileAboutComponent implements OnInit
    */
   constructor(
       private userService: UserService,
-      public dalog: MatDialog,
+      public dalog: MatDialog
     ) { }
   
   ngOnInit() {
@@ -36,33 +36,40 @@ export class ProfileAboutComponent implements OnInit
     this.userService.getUserById()
         .subscribe((user) => {
             this.user = user;
-            console.log('user', user)
         }, err => {})
   }
 
 
-  editItem(item) {
-  //   if (item.name != null) {
-  //       var modalWindow = this.dalog.open(ModalWindowComponent,{
-  //           panelClass: 'event-form-dialog',
-  //           });
+  editItem() {
+    if (this.user != null) {
+        var modalWindow = this.dalog.open(ModalWindowComponent,{
+            panelClass: 'event-form-dialog',
+            });
 
-  //       modalWindow.componentInstance.title = 'Edit Category';
-  //       modalWindow.componentInstance.categoryName = item.name;
+        modalWindow.componentInstance.title = 'Edit General Information';
+        modalWindow.componentInstance.firstName = this.user.firstName;
+        modalWindow.componentInstance.lastName = this.user.lastName;
+        modalWindow.componentInstance.birthday = this.user.birthday;
+        modalWindow.componentInstance.phoneNumber = this.user.phoneNumber;
+        modalWindow.componentInstance.email = this.user.email;
+        
+        console.log('user',this.user);
 
-  //       modalWindow.afterClosed().subscribe((data) => {
-  //           if (data != null) {
-  //             item.name = data.value.item;
+        modalWindow.afterClosed().subscribe((data) => {
+            if (data != null) {
+              this.user.firstName = data.value.firstName;
+              this.user.lastName = data.value.lastName;
+              this.user.birthday = data.value.birthday;
+              this.user.phoneNumber = data.value.phoneNumber.internationalNumber;
+              this.user.email = data.value.email;
 
-  //               // this.itemService.editItem(category)
-  //               //     .subscribe(() => { 
-  //               //         this.getCategories();
-  //               //     })
-  //           }
-  //       })
-  //   }
-        console.log('click', item);
-  
+              this.userService.editUser(this.user)
+                    .subscribe(() => { 
+                      this.getUser();
+                    })
+            }
+        })
+    }
   }
 
 }

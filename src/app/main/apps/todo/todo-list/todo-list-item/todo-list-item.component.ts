@@ -1,10 +1,10 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Todo } from 'app/main/apps/todo/todo.model';
 import { CategoryValueService } from '../../category-value.service';
 import { ItemService } from 'app/core/items/item.service';
 import { MatDialog,} from '@angular/material/dialog';
 import { ModWindowComponent } from '../../mod-window/mod-window.component';
 import { ConfirmModWindComponent } from '../../confirm-mod-wind/confirm-mod-wind.component';
+import { Todo } from 'app/core/interface/models.model';
 
 @Component({
     selector     : 'todo-list-item',

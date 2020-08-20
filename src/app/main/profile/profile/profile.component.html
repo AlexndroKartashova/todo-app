@@ -17,33 +17,26 @@
 
         </div>
 
-
-        <div class="content" fusePerfectScrollbar [@animate]="{value:'*',params:{y:'50px'}}">
-
-            <!-- <div class="p-24"> -->
-                <!-- <button mat-raised-button
-                    class="mat-accent add-todo-button w-100-p"
-                    aria-label="ADD CATEGORY">
-                    ADD CATEGORY 
-                </button> -->
-            <!-- </div> -->
-            
+        <div class="content" fusePerfectScrollbar [@animate]="{value:'*',params:{y:'50px'}}">        
             <div class="nav material2" fxLayout="column">
                 <div class="nav-subheader">PROFILE</div>
                     <div class="nav-item">
-                        <a  class=" nav-link " 
-                            matRipple 
+                        <a  class=" nav-link" 
+                            (click)="selectGeneralInformation()"
+                            matRipple
+                            [ngClass]="selectedItem == 1 ? 'link-bg' : ''" 
                             fxLayout="row" fxLayoutAlign="start center" fxFlex>
-                            <!-- [ngClass]="selectedItem === category.id ? 'link-bg' : ''" -->
                             <mat-icon>perm_identity</mat-icon>
                             <span>General Information</span>
                         </a>
                     </div>
+                    
                     <div class="nav-item">
                         <a  class="nav-link" 
+                            (click)="selectContactsInformation()"
+                            [ngClass]="selectedItem ==2 ? 'link-bg' : ''" 
                             matRipple 
                             fxLayout="row" fxLayoutAlign="start center" fxFlex>
-                            <!-- [ngClass]="selectedItem === category.id ? 'link-bg' : ''" -->
                             <mat-icon>import_contacts</mat-icon>
                             <span>Contacts</span>
                         </a>
@@ -57,7 +50,8 @@
 
         <div class="content-card" >
             <div class="content" fxFlexAlign="row">
-                <app-profile-list></app-profile-list>
+                <app-profile-list *ngIf="selectedItem == 1"></app-profile-list>
+                <contacts-contact-list *ngIf="selectedItem == 2"></contacts-contact-list>
             </div>             
         </div>
         

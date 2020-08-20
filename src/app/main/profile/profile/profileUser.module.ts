@@ -16,6 +16,16 @@ import { HeaderModule } from 'app/layout/components/header/header.module';
 import { ProfileListComponent } from './profile-list/profile-list.component';
 import { ModalWindowComponent } from './modal-window/modal-window.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ContactsContactListComponent } from './profile-list/contact-list/contact-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { AddContactModalWindowComponent } from './add-contact-modal-window/add-contact-modal-window.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { EditContactModalWindowComponent } from './edit-contact-modal-window/edit-contact-modal-window.component';
+import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const routes = [
   {
@@ -30,11 +40,20 @@ const routes = [
     ProfileAboutComponent,
     ProfileListComponent,
     ModalWindowComponent,
+    ContactsContactListComponent,
+    AddContactModalWindowComponent,
+    EditContactModalWindowComponent,
+    ConfirmModWindComponent
   ],
   imports: [
     RouterModule.forChild(routes),
+    BsDropdownModule,
+    NgxIntlTelInputModule,
     CommonModule,
     NgxDnDModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
     
     FuseSharedModule,
     FuseSidebarModule,
@@ -47,10 +66,15 @@ const routes = [
     MatTabsModule,
     HeaderModule,
     RouterModule,
-    MatFormFieldModule    
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
   ],
   entryComponents: [
-    ModalWindowComponent
+    ModalWindowComponent,
+    AddContactModalWindowComponent,
+    EditContactModalWindowComponent,
+    ConfirmModWindComponent
   ]
 })
 export class ProfileUserModule { }

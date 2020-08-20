@@ -134,28 +134,32 @@ profile-about {
     }
 }
 
-@import "src/@fuse/scss/fuse";
+.event-form-dialog {
 
-todo-main-sidebar {
-    display: flex;
-    flex: 1 0 auto;
-    flex-direction: column;
-    height: 100%;
-
-    .content {
-
-        .input-category{
-            margin-left: 25px;
-            border: #039be5 solid 2px;
-            border-radius: 5px;
-            height: 30px;
-            width: 190px;
-        }
+    @include media-breakpoint('xs') {
+        width: 100%;
     }
 
-    .add-todo-button {
-        background-color: #039be5 !important;
-        color: white !important;
-        font-weight: 700;
+    @include media-breakpoint('gt-xs') {
+        width: 480px;
     }
+
+    .mat-dialog-container {
+        padding: 0 !important;
+    }
+
+    .dialog-content-wrapper {
+        max-height: 85vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .primary-color-input,
+    .secondary-color-input {
+        padding: 6px 8px;
+    }
+}
+
+.cursor {
+    cursor: pointer;
 }

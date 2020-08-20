@@ -12,7 +12,12 @@ export class UserService {
   getUserById(): Observable<any> {
     return this.http.get("http://localhost:58873/api/profile");
   }
-  editUser(todo): Observable<any> {
-      return this.http.post("http://localhost:58873/api/todo/edit", todo)    
+  editUser(user): Observable<any> {
+    // const user = {
+    //   firstName: firstName,
+    //   lastName: lastName,
+    //   birthday: birthday
+    // }
+    return this.http.post("http://localhost:58873/api/profile/edit", user)    
   }
 }
