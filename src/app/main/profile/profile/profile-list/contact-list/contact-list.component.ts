@@ -18,7 +18,7 @@ import { ConfirmModWindComponent } from '../../confirm-mod-wind/confirm-mod-wind
 })
 export class ContactsContactListComponent implements OnInit
 {
-    @ViewChild('dialogContent', {static: false})
+    @ViewChild('dialogContent')
     dialogContent: TemplateRef<any>;
 
     contacts: Contact[];
