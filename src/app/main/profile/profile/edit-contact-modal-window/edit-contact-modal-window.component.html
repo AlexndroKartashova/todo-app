@@ -11,56 +11,54 @@
 
   <div mat-dialog-content class="p-16 pb-0 m-0" fusePerfectScrollbar>
 
-      <form name="eventForm" class="event-form w-100-p" fxLayout="column" fxFlex [formGroup]="dataContactControl">
+    <form name="eventForm" class="event-form w-100-p" fxLayout="column" fxFlex [formGroup]="dataContactControl">
 
-            <mat-form-field appearance="outline">
-                <mat-label>Name</mat-label>
-                <input matInput
-                    formControlName="name"
-                    name="title">
-            </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput
+                formControlName="name"
+                name="title">
+        </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput
-                    formControlName="email"
-                    name="title">
-            </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput
+                formControlName="email"
+                name="title">
+        </mat-form-field>
 
-            <form class="form-phone" [formGroup]="dataContactControl"> 
-                <label>Phone Number</label>
-                <br>
-                <ngx-intl-tel-input 
-                    [inputId]="'custom'"
-                    [cssClass]="control-form" 
-                    [preferredCountries]="preferredCountries"
-                    [enableAutoCountrySelect]="false" 
-                    [enablePlaceholder]="true" 
-                    [searchCountryFlag]="false"
-                    [searchCountryField]="[]"
-                    [selectFirstCountry]="false" 
-                    [selectedCountryISO]=""
-                    [maxLength]="15" 
-                    [tooltipField]="TooltipLabel.Name" 
-                    [phoneValidation]="true" 
-                    [separateDialCode]="separateDialCode"
-                    name="phone"
-                    formControlName="phoneNumber"
-                ></ngx-intl-tel-input>
-            </form>
-      </form>
+        <label>Phone Number</label>
+        <div class="phoneNumber">
+            <ngx-intl-tel-input
+                [inputId]="my-input-id"
+                [cssClass]="'custom'" 
+                [preferredCountries]="preferredCountries"
+                [enableAutoCountrySelect]="false" 
+                [enablePlaceholder]="true" 
+                [searchCountryFlag]="true"
+                [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                [selectFirstCountry]="false" 
+                [selectedCountryISO]="selectedCountryISO"
+                [maxLength]="15" 
+                [tooltipField]="TooltipLabel.Name" 
+                [phoneValidation]="true" 
+                [separateDialCode]="separateDialCode"
+                name="phone" formControlName="phoneNumber">
+            </ngx-intl-tel-input>
+        </div>
+    </form>
 
   </div>
 
     <div mat-dialog-actions class="m-0 p-16" fxLayout="row" fxLayoutAlign="end center">
    
         <button 
-                mat-raised-button
-                class="mat-accent add-todo-button w-100-p"
-                mat-button 
-                (click)="dialogRef.close(dataContactControl)"
-                aria-label="ADD"
-                [disabled]="dataContactControl.invalid">
+            mat-raised-button
+            class="mat-accent add-todo-button w-100-p"
+            mat-button 
+            (click)="dialogRef.close(dataContactControl)"
+            [disabled]="dataContactControl.invalid"
+            aria-label="ADD">
             Save
         </button>
     

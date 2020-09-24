@@ -21,7 +21,7 @@ export class EditContactModalWindowComponent implements OnInit {
       ]),
       phoneNumber: new FormControl(this.phoneNumber, [
         Validators.required
-      ]),
+        ]),
       email: new FormControl(this.email, [
         Validators.required,
         Validators.email
@@ -33,6 +33,13 @@ export class EditContactModalWindowComponent implements OnInit {
   public name: any;
   public phoneNumber: any;
   public email: any;
+  public selectedCountryISO: any;
+  
+  separateDialCode = true;
+  SearchCountryField = SearchCountryField;
+	TooltipLabel = TooltipLabel;
+	CountryISO = CountryISO;
+  preferredCountries: CountryISO[] = [CountryISO.Russia];
 
   dataContactControl: FormGroup;
 
@@ -40,9 +47,4 @@ export class EditContactModalWindowComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  separateDialCode = false;
-  SearchCoubtrield = SearchCountryField;
-  TooltipLabel = TooltipLabel;
-  CountryISO = CountryISO;
-	preferredCountries: CountryISO[] = [CountryISO.Russia];
 }

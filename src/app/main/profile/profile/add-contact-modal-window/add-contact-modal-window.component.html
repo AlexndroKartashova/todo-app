@@ -21,18 +21,30 @@
             </mat-form-field>
 
             <mat-form-field appearance="outline" class="w-100-p">
-                <mat-label>Phone Number</mat-label>
-                <input matInput
-                    formControlName="phoneNumber"
-                    name="title">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline" class="w-100-p">
                 <mat-label>Email</mat-label>
                 <input matInput
                     formControlName="email"
                     name="title">
             </mat-form-field>
+
+            <label>Phone Number</label>
+            <div class="phoneNumber">
+                <ngx-intl-tel-input
+                    [inputId]="my-input-id"
+                    [cssClass]="'custom'" 
+                    [preferredCountries]="preferredCountries"
+                    [enableAutoCountrySelect]="false" 
+                    [enablePlaceholder]="true" 
+                    [searchCountryFlag]="true"
+                    [searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+                    [selectFirstCountry]="false" 
+                    [maxLength]="15" 
+                    [tooltipField]="TooltipLabel.Name" 
+                    [phoneValidation]="true" 
+                    [separateDialCode]="separateDialCode"
+                    name="phone" formControlName="phoneNumber">
+                </ngx-intl-tel-input>
+            </div>
       </form>
 
   </div>

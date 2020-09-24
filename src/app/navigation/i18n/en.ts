@@ -1,25 +1,16 @@
 export const locale = {
     lang: 'en',
     data: {
-        'NAV': {
-            'APPLICATIONS': 'Applications',
-            'DASHBOARDS'  : 'Dashboards',
-            'CALENDAR'    : 'Calendar',
-            'ECOMMERCE'   : 'E-Commerce',
-            'ACADEMY'     : 'Academy',
-            'MAIL'        : {
-                'TITLE': 'Mail',
-                'BADGE': '25'
-            },
-            'MAIL_NGRX'        : {
-                'TITLE': 'Mail Ngrx',
-                'BADGE': '13'
-            },
-            'CHAT'        : 'Chat',
-            'FILE_MANAGER': 'File Manager',
-            'CONTACTS'    : 'Contacts',
-            'TODO'        : 'To-Do',
-            'SCRUMBOARD'  : 'Scrumboard'
-        }
+        'BUTTON': {
+            'ADDCATEGORY' : 'ADD CATEGOTY',
+            'MYPROFILE' : 'My Profile',
+            'LOGOUT' : 'Log Out',
+            'TODO' : 'Todo'
+        },
+        'PROFILE': {
+            'GENERALINFORMATION' : 'General information',
+            'CONTACTS' : 'Contacts'
+        },
+        'CATEGORY' : 'Category',
     }
 };

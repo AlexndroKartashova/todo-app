@@ -4,8 +4,6 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
-import { FuseUtils } from '@fuse/utils';
-
 import { ItemService } from 'app/core/items/item.service';
 import { CategoryValueService } from './category-value.service';
 import { Todo } from 'app/core/interface/models.model';

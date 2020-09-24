@@ -23,7 +23,7 @@
         <mat-header-cell *matHeaderCellDef fxHide fxShow.gt-md>Phone</mat-header-cell>
         <mat-cell *matCellDef="let contact" fxHide fxShow.gt-md>
             <p class="phone text-truncate">
-                {{contact.phoneNumber}}
+               {{contact.countryCode}} {{contact.phoneNumber}}
             </p>
         </mat-cell>
     </ng-container>

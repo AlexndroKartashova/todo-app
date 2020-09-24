@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { CalendarEvent } from 'app/core/interface/calendar-utils';
+import { SearchCountryField, TooltipLabel, CountryISO } from 'ngx-intl-tel-input';
 
 @Component({
   selector: 'app-add-contact-modal-window',
@@ -22,8 +23,7 @@ export class AddContactModalWindowComponent implements OnInit {
         Validators.required
       ]),
       phoneNumber: new FormControl(this.phoneNumber, [
-        Validators.required,
-        Validators.pattern("[0-9]{10,11}"),
+        Validators.required
       ]),
       email: new FormControl(this.email, [
         Validators.required,
@@ -38,6 +38,12 @@ export class AddContactModalWindowComponent implements OnInit {
   public email: any;
 
   dataProfileControl: FormGroup;
+
+  separateDialCode = true;
+  SearchCountryField = SearchCountryField;
+	TooltipLabel = TooltipLabel;
+	CountryISO = CountryISO;
+  preferredCountries: CountryISO[] = [CountryISO.Russia];
 
   matDialogClose(): void {
     this.dialogRef.close();

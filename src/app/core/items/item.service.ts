@@ -8,11 +8,11 @@ export class ItemService {
     constructor(private http: HttpClient) { }
 
     getAllItems(): Observable<any> {
-        return this.http.get("http://localhost:58873/api/todo");
+        return this.http.get("http://localhost:58874/api/todo");
     }
 
     getById(id): Observable<any> {
-        return this.http.get(`http://localhost:58873/api/todo/id/${id}`);
+        return this.http.get(`http://localhost:58874/api/todo/id/${id}`);
     }
 
     addItem(name: string, parentItemId?: string): Observable<any> {
@@ -20,22 +20,22 @@ export class ItemService {
           name: name,
           parentItemId: parentItemId
         }
-        return this.http.post("http://localhost:58873/api/todo/add", body)    
+        return this.http.post("http://localhost:58874/api/todo/add", body)    
     }
 
     editItem(todo): Observable<any> {
-         return this.http.post("http://localhost:58873/api/todo/edit", todo)    
+         return this.http.post("http://localhost:58874/api/todo/edit", todo)    
     }
 
     deleteItem(id: string): Observable<any> {
-        return this.http.get(`http://localhost:58873/api/todo/${id}/delete`); 
+        return this.http.get(`http://localhost:58874/api/todo/${id}/delete`); 
     }
 
     getItems(parentItemId: string): Observable<any> {
-        return this.http.get(`http://localhost:58873/api/todo/${parentItemId}`);
+        return this.http.get(`http://localhost:58874/api/todo/${parentItemId}`);
     }
 
     chengeCheckbox(todo): Observable<any> {
-        return this.http.post("http://localhost:58873/api/todo/chenge_status", todo);
+        return this.http.post("http://localhost:58874/api/todo/chenge_status", todo);
     }
 } 

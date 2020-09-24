@@ -45,6 +45,8 @@ export class User {
     lastName: string;
     birthday: Date;
     phoneNumber: Date;
+    countryCode: string;
+    countryISO: string;
 
     /**
      * Constructor
@@ -59,6 +61,8 @@ export class User {
             this.lastName = user.lastName;
             this.birthday = user.birthday;
             this.phoneNumber = user.phoneNumber;
+            this.countryCode = user.countryCode;
+            this.countryISO = user.countryISO;
         }
     }
 }

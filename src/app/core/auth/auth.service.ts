@@ -18,7 +18,7 @@ export class AuthService {
             password: password,
             confirmPassword: confirmPassword
         }
-         return this.http.post("http://localhost:58873/api/auth/register", body)    
+         return this.http.post("http://localhost:58874/api/auth/register", body)    
     }
 
     postUserLogin(email: string, password: string): Observable<any> {
@@ -26,7 +26,7 @@ export class AuthService {
             email: email,
             password: password
         }
-         return this.http.post("http://localhost:58873/api/auth/login", body)    
+         return this.http.post("http://localhost:58874/api/auth/login", body)    
     }
 
     loggedIn() {

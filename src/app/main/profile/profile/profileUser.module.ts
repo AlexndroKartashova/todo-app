@@ -20,12 +20,14 @@ import { MatInputModule } from '@angular/material/input';
 import { ContactsContactListComponent } from './profile-list/contact-list/contact-list.component';
 import { MatTableModule } from '@angular/material/table';
 import { AddContactModalWindowComponent } from './add-contact-modal-window/add-contact-modal-window.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { EditContactModalWindowComponent } from './edit-contact-modal-window/edit-contact-modal-window.component';
 import { ConfirmModWindComponent } from './confirm-mod-wind/confirm-mod-wind.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatMenuModule } from '@angular/material/menu';
+import { GallarySliderComponent } from './profile-list/gallery-slider/gallary-slider/gallary-slider.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 const routes = [
   {
@@ -43,11 +45,11 @@ const routes = [
     ContactsContactListComponent,
     AddContactModalWindowComponent,
     EditContactModalWindowComponent,
-    ConfirmModWindComponent
+    ConfirmModWindComponent,
+    GallarySliderComponent,
   ],
   imports: [
     RouterModule.forChild(routes),
-    BsDropdownModule,
     NgxIntlTelInputModule,
     CommonModule,
     NgxDnDModule,
@@ -69,12 +71,15 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatMenuModule,
+
+    IvyCarouselModule
   ],
   entryComponents: [
     ModalWindowComponent,
     AddContactModalWindowComponent,
     EditContactModalWindowComponent,
-    ConfirmModWindComponent
+    ConfirmModWindComponent,
   ]
 })
 export class ProfileUserModule { }

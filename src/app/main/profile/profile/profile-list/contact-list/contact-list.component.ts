@@ -10,7 +10,7 @@ import { EditContactModalWindowComponent } from '../../edit-contact-modal-window
 import { ConfirmModWindComponent } from '../../confirm-mod-wind/confirm-mod-wind.component';
 
 @Component({
-    selector     : 'contacts-contact-list',
+    selector     : 'contact-list',
     templateUrl  : './contact-list.component.html',
     styleUrls    : ['./contact-list.component.scss'],
     encapsulation: ViewEncapsulation.None,
@@ -62,11 +62,15 @@ export class ContactsContactListComponent implements OnInit
 
         modalWindow.afterClosed().subscribe((data) => {
             if (data != null) {
+                console.log('data', data);
+
                 const name = data.value.name;
                 const email = data.value.email;
-                const phoneNumber = data.value.phoneNumber;
+                const phoneNumber = data.value.phoneNumber.number;;
+                const countryISO  = data.value.phoneNumber.dialCode;
+                const countryCode = data.value.phoneNumber.countryCode.toLowerCase();
 
-                this.contactService.addContact(name, email, phoneNumber)
+                this.contactService.addContact(name, email, phoneNumber, countryCode, countryISO)
                 .subscribe(() => { 
                     this.getContacts();
                     console.log('contact', data)
@@ -81,27 +85,25 @@ export class ContactsContactListComponent implements OnInit
             var modalWindow = this.dalog.open(EditContactModalWindowComponent,{
                 panelClass: 'event-form-dialog',
             });
-    
+
             modalWindow.componentInstance.title = 'Edit Contact';
             modalWindow.componentInstance.name = contact.name;
-            // modalWindow.componentInstance.phoneNumber = contact.phoneNumber;
             modalWindow.componentInstance.email = contact.email;
+            modalWindow.componentInstance.selectedCountryISO = contact.countryISO;
+            modalWindow.componentInstance.phoneNumber = contact.phoneNumber;
     
             modalWindow.afterClosed().subscribe((data) => {
                 if (data != null) {
                     console.log('data', data);
 
                     contact.name = data.value.name;
-                    contact.phoneNumber = data.value.phoneNumber.internationalNumber;
+                    contact.phoneNumber = data.value.phoneNumber.number;
+                    contact.countryCode = data.value.phoneNumber.dialCode;
+                    contact.countryISO = data.value.phoneNumber.countryCode.toLowerCase();
                     contact.email = data.value.email;
                     
-                    console.log('contact', contact);
-                    console.log('value', data.value);
-
                     this.contactService.editContact(contact)
                         .subscribe(() => { 
-                            console.log('contact', contact);
-
                             this.getContacts();
                         })
                 }

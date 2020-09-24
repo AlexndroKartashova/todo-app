@@ -8,6 +8,7 @@ import { FuseConfigService } from '@fuse/services/config.service';
 import { FuseSidebarService } from '@fuse/components/sidebar/sidebar.service';
 
 import { AuthService } from 'app/core/auth/auth.service';
+import { navigation } from 'app/navigation/navigation';
 
 @Component({
     selector     : 'toolbar',
@@ -43,7 +44,25 @@ export class ToolbarComponent implements OnInit, OnDestroy
 
         private authService: AuthService
     )
-    {}
+    {
+        this.languages = [
+            {
+                id   : 'en',
+                title: 'English',
+                flag : 'us'
+            },
+            {
+                id   : 'ru',
+                title: 'Russian',
+                flag : 'ru'
+            }
+        ];
+
+        this.navigation = navigation;
+
+        // Set the private defaults
+        this._unsubscribeAll = new Subject();
+    }
 
     // -----------------------------------------------------------------------------------------------------
     // @ Lifecycle hooks

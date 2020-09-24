@@ -24,7 +24,6 @@ import { AuthInterceptor } from './core/auth/auth.interceptor';
 import { AuthGuard } from './core/guards/auth.guards';
 import { TodoService } from './main/apps/todo/todo.service';
 
-
 const appRoutes: Routes = [
     {
         path        : 'todo', 

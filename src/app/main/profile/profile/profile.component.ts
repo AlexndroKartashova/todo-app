@@ -10,7 +10,7 @@ import { fuseAnimations } from '@fuse/animations';
 })
 export class ProfileComponent implements OnInit {
 
-  selectedItem: number;
+  selectedItem: number = 3;
 
   constructor(
     
@@ -26,6 +26,10 @@ export class ProfileComponent implements OnInit {
 
   selectContactsInformation() {
     this.selectedItem = 2;
+  }
+
+  selectGalalry() {
+    this.selectedItem = 3;
   }
   
 }

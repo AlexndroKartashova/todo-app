@@ -1,6 +1,6 @@
 @import "src/@fuse/scss/fuse";
 
-contacts-contact-list {
+contact-list {
     display: flex;
     flex: 1 1 auto;
     width: 100%;
@@ -48,32 +48,6 @@ contacts-contact-list {
         position: sticky;
         top: calc(100vh - 120px);
         bottom: auto;
-    }
-}
-
-.event-form-dialog {
-
-    @include media-breakpoint('xs') {
-        width: 100%;
-    }
-
-    @include media-breakpoint('gt-xs') {
-        width: 480px;
-    }
-
-    .mat-dialog-container {
-        padding: 0 !important;
-    }
-
-    .dialog-content-wrapper {
-        max-height: 85vh;
-        display: flex;
-        flex-direction: column;
-    }
-
-    .primary-color-input,
-    .secondary-color-input {
-        padding: 6px 8px;
     }
 }
 

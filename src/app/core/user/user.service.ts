@@ -10,7 +10,7 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserById(): Observable<any> {
-    return this.http.get("http://localhost:58873/api/profile");
+    return this.http.get("http://localhost:58874/api/profile");
   }
   editUser(user): Observable<any> {
     // const user = {
@@ -18,6 +18,6 @@ export class UserService {
     //   lastName: lastName,
     //   birthday: birthday
     // }
-    return this.http.post("http://localhost:58873/api/profile/edit", user)    
+    return this.http.post("http://localhost:58874/api/profile/edit", user)    
   }
 }

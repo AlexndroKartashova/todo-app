@@ -7,8 +7,8 @@ import { HeaderModule } from 'app/layout/components/header/header.module';
     imports     : [
         TodoModule,
         FuseSharedModule,
-        HeaderModule
-    ]
+        HeaderModule,
+    ],
 })
 export class AppsModule
 {}

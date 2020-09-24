@@ -44,33 +44,18 @@ export class ModalWindowComponent implements OnInit {
   public birthday: any;
   public phoneNumber: any;
   public email: any;
+  public selectedCountryISO: any;
+  
+  separateDialCode = true;
+  SearchCountryField = SearchCountryField;
+	TooltipLabel = TooltipLabel;
+	CountryISO = CountryISO;
+  preferredCountries: CountryISO[] = [CountryISO.Russia];
+
 
   dataProfileControl: FormGroup;
 
   matDialogClose(): void {
     this.dialogRef.close();
   }
-
-  separateDialCode = false;
-  SearchCoubtrield = SearchCountryField;
-  TooltipLabel = TooltipLabel;
-  CountryISO = CountryISO;
-	preferredCountries: CountryISO[] = [CountryISO.Russia];
-
-  // validatorsData(fGroup: FormControl) {
-  //   const dateBirthday = fGroup.get('birthday').value;
-  //   const date = new Date('01.01.2006');
-
-  //   if (dateBirthday > date) {
-  //     fGroup.get('birthday').setErrors( {badData: true} )
-
-  //     let status = dateBirthday > date;
-  //     console.log('dateBirthday > date', status)
-
-  //     // console.log('data', new Date('01.01.2006'))
-  //   } else return null
-  //   let status = dateBirthday > date;
-  //   console.log('status', status)
-  //   console.log('dateBirthday > date', dateBirthday > date)
-  // }
 }

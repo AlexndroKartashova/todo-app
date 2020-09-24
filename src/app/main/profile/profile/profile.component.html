@@ -34,11 +34,22 @@
                     <div class="nav-item">
                         <a  class="nav-link" 
                             (click)="selectContactsInformation()"
-                            [ngClass]="selectedItem ==2 ? 'link-bg' : ''" 
+                            [ngClass]="selectedItem == 2 ? 'link-bg' : ''" 
                             matRipple 
                             fxLayout="row" fxLayoutAlign="start center" fxFlex>
                             <mat-icon>import_contacts</mat-icon>
                             <span>Contacts</span>
+                        </a>
+                    </div>
+
+                    <div class="nav-item">
+                        <a  class="nav-link" 
+                            (click)="selectGalalry()"
+                            [ngClass]="selectedItem == 3 ? 'link-bg' : ''" 
+                            matRipple 
+                            fxLayout="row" fxLayoutAlign="start center" fxFlex>
+                            <mat-icon>image</mat-icon>
+                            <span>Gallary</span>
                         </a>
                     </div>
                 </div>
@@ -46,12 +57,14 @@
     </fuse-sidebar>
 
     <div class="center">
-        <div class="header" fxLayout="row" fxLayoutAlign="start center"></div>
+        <div class="header" fxLayout="row" fxLayoutAlign="start center">
+        </div>
 
         <div class="content-card" >
             <div class="content" fxFlexAlign="row">
                 <app-profile-list *ngIf="selectedItem == 1"></app-profile-list>
-                <contacts-contact-list *ngIf="selectedItem == 2"></contacts-contact-list>
+                <contact-list *ngIf="selectedItem == 2"></contact-list>
+                <app-gallary-slider *ngIf="selectedItem == 3"></app-gallary-slider>
             </div>             
         </div>
         

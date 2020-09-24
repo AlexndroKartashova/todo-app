@@ -10,23 +10,29 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   getContacts(): Observable<any> {
-    return this.http.get("http://localhost:58873/api/contacts");
+    return this.http.get("http://localhost:58874/api/contacts");
   }
 
-  addContact(name: string, email?: string, phoneNumber?: string): Observable<any> {
+  addContact(name: string, email?: string, phoneNumber?: string, countryISO?: string, countryCode?: string): Observable<any> {
     const body = {
       name: name,
       email: email,
-      phoneNumber: phoneNumber
+      phoneNumber: phoneNumber,
+      countryCode: countryCode,
+      countryISO: countryISO
     }
-    return this.http.post("http://localhost:58873/api/contacts/add", body);
+    return this.http.post("http://localhost:58874/api/contacts/add", body);
   }
   
   editContact(contact): Observable<any> {
-    return this.http.post("http://localhost:58873/api/contacts/edit", contact)    
+    return this.http.post("http://localhost:58874/api/contacts/edit", contact)    
   }
 
   deleteContact(id: string): Observable<any> {
-    return this.http.get(`http://localhost:58873/api/contacts/${id}/delete`); 
+    return this.http.get(`http://localhost:58874/api/contacts/${id}/delete`); 
+  }
+
+  getById(id): Observable<any> {
+    return this.http.get(`http://localhost:58874/api/contacts/${id}`);
   }
 }

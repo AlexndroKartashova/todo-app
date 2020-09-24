@@ -52,15 +52,16 @@ export class ProfileAboutComponent implements OnInit
         modalWindow.componentInstance.birthday = this.user.birthday;
         modalWindow.componentInstance.phoneNumber = this.user.phoneNumber;
         modalWindow.componentInstance.email = this.user.email;
-        
-        console.log('user',this.user);
+        modalWindow.componentInstance.selectedCountryISO = this.user.countryISO;
 
         modalWindow.afterClosed().subscribe((data) => {
             if (data != null) {
               this.user.firstName = data.value.firstName;
               this.user.lastName = data.value.lastName;
               this.user.birthday = data.value.birthday;
-              this.user.phoneNumber = data.value.phoneNumber.internationalNumber;
+              this.user.phoneNumber = data.value.phoneNumber.number;
+              this.user.countryCode = data.value.phoneNumber.dialCode;
+              this.user.countryISO = data.value.phoneNumber.countryCode.toLowerCase();
               this.user.email = data.value.email;
 
               this.userService.editUser(this.user)
