@@ -33,8 +33,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "showCircularDependencies": false,
-            "aot": true
+            "showCircularDependencies": false
           },
           "configurations": {
             "production": {
@@ -46,6 +45,8 @@
               ],
               "optimization": true,
               "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -56,33 +57,18 @@
                   "type": "initial",
                   "maximumWarning": "4mb",
                   "maximumError": "6mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
                 }
               ]
             },
             "ec": {
               "sourceMap": true,
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
-                }
-              ]
+              "extractCss": true
             },
             "hmr": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.hmr.ts"
-                }
-              ],
-              "budgets": [
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb"
                 }
               ]
             }
